@@ -1,0 +1,123 @@
+.footer {
+    // .footer__row
+    &__row {
+        // .footer__row--top
+        &--top {
+            background-color: #f6f6f6;
+        }
+
+        // .footer__row--bottom
+        &--bottom {
+            background-color: #fff;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            display: grid;
+            gap: 20px;
+
+            @media (min-width: 576px) {
+                grid-template-columns: 1fr max-content;
+                align-items: flex-start;
+            }
+        }
+    }
+
+    // .footer__up
+    &__up {
+        font-size: 12px;
+        line-height: 16px;
+        padding: 12px 14px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        transition: color 0.25s ease;
+
+        &:hover {
+            color: var(--accent-color);
+        }
+    }
+
+
+    // .footer__logo
+    &__logo {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 700;
+
+        @media (min-width: 576px) {
+            flex-direction: column;
+        }
+        // .footer__logo-ico
+        &-ico {
+            width: 40px;
+        }
+    }
+
+    // .footer__menu
+    &__menu {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e3e4e6;
+
+        @media (min-width: 576px) {
+            border: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        // .footer__menu-link
+        &-link {
+            transition: color 0.25s ease;
+
+            &:hover,
+            &:focus {
+                color: var(--accent-color);
+            }
+        }
+    }
+
+    // .footer__social
+    &__social {
+        display: grid;
+        gap: 5px;
+        // .footer__social-text
+        &-text {
+            font-size: 12px;
+        }
+
+        // .footer__social-list
+        &-list {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        // .footer__social-link
+        &-link {
+            width: 30px;
+            height: 30px;
+            background-color: #f6f6f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.25s ease;
+            border-radius: 5px;
+
+            &:hover,
+            &:focus {
+
+                svg {
+                    fill: var(--accent-color);
+                }
+            }
+
+            svg {
+                transition: all 0.25s ease;
+            }
+        }
+    }
+}

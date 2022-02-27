@@ -1,0 +1,11 @@
+.not-found {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    &__inner {
+        display: grid;
+        gap: 20px;
+        align-items: flex-start;
+        justify-items: center;
+    }
+}

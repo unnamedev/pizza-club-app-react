@@ -1,0 +1,105 @@
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    user-select: none;
+    transition: all 1s ease;
+
+    &.is-show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: unset;
+        user-select: unset;
+    }
+
+    &__image {
+        max-width: 370px;
+        width: 100%;
+        animation: spin 10s linear infinite;
+        @media (min-width: 992px) {
+            max-width: 450px;
+        }
+    }
+
+    &__text {
+        position: relative;
+        z-index: 2;
+        font-size: 30px;
+        line-height: 1;
+        @media (min-width: 768px) {
+            font-size: 45px;
+        }
+    }
+}
+
+.dot-flashing {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--accent-color);
+    animation: dot-flashing 1s infinite linear alternate;
+    animation-delay: .5s;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+
+.dot-flashing::before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--accent-color);
+    animation: dot-flashing 1s infinite alternate;
+    animation-delay: 0s;
+}
+
+.dot-flashing::after {
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--accent-color);
+    -webkit-animation: dot-flashing 1s infinite alternate;
+    animation: dot-flashing 1s infinite alternate;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+
+@keyframes dot-flashing {
+    0% {
+        background-color: var(--accent-color);
+    }
+    50%,
+    100% {
+        background-color: #ebe6ff;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

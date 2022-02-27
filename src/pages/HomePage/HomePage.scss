@@ -1,0 +1,19 @@
+.home {
+    padding: 40px 0;
+
+    &__top {
+        display: grid;
+        gap: 10px;
+        margin-bottom: 20px;
+        @media (min-width: 992px) {
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__grid {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
